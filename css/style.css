@@ -1,5 +1,62 @@
 @import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
 
+@font-face {
+  font-family: "CuteFont";
+  src: url("../assets/fonts/font 1.ttf");
+}
+
+body {
+  margin: 0;
+  font-family: "CuteFont", sans-serif;
+  background: linear-gradient(to bottom right, #ffe0f0, #fff6fb);
+  color: #ff4d88;
+}
+
+header {
+  text-align: center;
+  padding: 30px;
+  background-color: #fff;
+  border-bottom: 3px dashed #ffb6c1;
+  font-size: 2rem;
+}
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(255, 192, 203, 0.3);
+}
+
+button {
+  background-color: #ffb6c1;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #ff80aa;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.note {
+  background-color: #fff0f5;
+  padding: 15px;
+  margin: 10px 0;
+  border-left: 5px solid #ff69b4;
+  border-radius: 10px;
+}
+
 body.dashboard-body {
   margin: 0;
   font-family: 'Comic Neue', cursive;
