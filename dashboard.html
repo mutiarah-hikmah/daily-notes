@@ -2,34 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dashboard | Daily Notes</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body class="dashboard-body">
-  <header>
-    <h1>🌸 Daily Notes by Muti 🌸</h1>
-    <button id="logout-btn">Logout</button>
-  </header>
+  <div class="dashboard-container">
+    <h1 class="dashboard-title">🌸 Daily Notes by Muti 🌸</h1>
 
-  <main>
-    <section class="note-form">
-      <h2>Tulis Catatan Harianmu ✍️</h2>
-      <textarea id="note-input" placeholder="Tulis sesuatu yang lucu, seru, atau manis..."></textarea>
-      <button id="save-note">Simpan Catatan 💾</button>
+    <form id="noteForm" class="note-form">
+      <h2 class="form-title">Tulis Catatan Harianmu ✍️</h2>
+      <textarea 
+        id="noteInput" 
+        placeholder="Tulis sesuatu yang lucu, seru, atau bermakna..."
+        required
+      ></textarea>
+      <div class="button-group">
+        <button type="submit" class="btn">💾 Simpan Catatan</button>
+        <button type="button" id="logoutBtn" class="btn logout">Logout</button>
+      </div>
+    </form>
+
+    <section class="notes-section">
+      <h2>📚 Catatan Sebelumnya</h2>
+      <ul id="notesList"></ul>
     </section>
+  </div>
 
-    <section class="note-list">
-      <h2>Catatan Sebelumnya 📚</h2>
-      <ul id="notes-container"></ul>
-    </section>
-  </main>
-
-  <footer>
-    <p>🌷 Daily Notes by Muti 🌷</p>
+  <footer class="footer">
+    🌷 Daily Notes by Muti 🌷
   </footer>
 
-  <script src="js/main.js" type="module"></script>
+  <script src="dashboard.js"></script>
 </body>
 </html>
