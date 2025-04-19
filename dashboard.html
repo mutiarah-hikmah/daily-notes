@@ -1,39 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard | Daily Notes</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>My Cute Diary</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
-<body class="dashboard-body">
+<body>
   <div class="container">
-    <h1>🌸 Your Daily Notes 🌸</h1>
-    <p class="subtitle">Tulis Catatan Harianmu di sini</p>
+    <h1>🌸 My Pink Diary 🌸</h1>
+    <p class="subtitle">Tulis isi hatimu di sini ✨</p>
 
-    <form id="noteForm">
-      <textarea
-        id="noteInput"
-        placeholder="Tulis sesuatu yang lucu, seru, atau penting..."
-        rows="6"
-        required
-      ></textarea>
-      <br />
-      <button type="submit" class="btn save-btn">💾 Save</button>
+    <!-- Form untuk input catatan -->
+    <form id="note-form">
+      <textarea id="note-input" rows="4" placeholder="Tulis catatan kamu di sini yaa~ 🐰"></textarea>
+      <button type="submit" class="save-btn">Simpan Catatan</button>
     </form>
 
+    <!-- Daftar catatan sebelumnya -->
     <div class="bottom-bar">
       <div class="prev-section">
-        <span class="prev-label">Previous Note</span>
-        <ul id="noteList" class="note-list"></ul>
+        <label class="prev-label">📒 Catatan Sebelumnya:</label>
+        <ul class="note-list" id="note-list">
+          <!-- Catatan akan tampil di sini -->
+        </ul>
       </div>
-      <button id="logoutBtn" class="btn logout-btn">Logout</button>
     </div>
+
+    <!-- Tombol logout -->
+    <button class="logout-btn">Logout</button>
   </div>
 
-  <script src="dashboard.js"></script>
-</body>
+  <script>
+    // Script sederhana biar catatan tersimpan sementara
+    const form = document.getElementById("note-form");
+    const input = document.getElementById("note-input");
+    const noteList = document.getElementById("note-list");
 
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const text = input.value.trim();
+      if (text) {
+        const li = document.createElement("li");
+        li.textContent = text;
+        noteList.prepend(li);
+        input.value = "";
+      }
+    });
+  </script>
+</body>
 </html>
