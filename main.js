@@ -1,22 +1,24 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+// === Import Firebase dari CDN (Versi Modular) ===
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } 
+  from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
 
+// === Konfigurasi Firebase ===
 const firebaseConfig = {
   apiKey: "AIzaSyB-s8Tmh3FPYP7JQ5sX4Oi4rX7D6tNY6QU",
   authDomain: "dailynotesbymuti.firebaseapp.com",
   projectId: "dailynotesbymuti",
-  storageBucket: "dailynotesbymuti.firebasestorage.app",
+  storageBucket: "dailynotesbymuti.appspot.com", // <-- ini tadinya salah, harus .app**spot**.com
   messagingSenderId: "141339332541",
   appId: "1:141339332541:web:7ddd95795b5bbd64ce4cd4",
   measurementId: "G-D59GXM39X2"
 };
 
-// Initialize Firebase
+// === Inisialisasi Firebase ===
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const auth = getAuth(app);
 
-// Register
+// === Register ===
 const registerForm = document.getElementById('register-form');
 if (registerForm) {
   registerForm.addEventListener('submit', (e) => {
@@ -30,12 +32,12 @@ if (registerForm) {
         window.location.href = "login.html";
       })
       .catch((error) => {
-        alert(error.message);
+        alert("Register gagal: " + error.message);
       });
   });
 }
 
-// Login
+// === Login ===
 const loginForm = document.getElementById('login-form');
 if (loginForm) {
   loginForm.addEventListener('submit', (e) => {
@@ -46,10 +48,10 @@ if (loginForm) {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         alert("Login berhasil!");
-        window.location.href = "index.html";
+        window.location.href = "dashboard.html"; // <-- arahkan ke dashboard
       })
       .catch((error) => {
-        alert(error.message);
+        alert("Login gagal: " + error.message);
       });
   });
 }
