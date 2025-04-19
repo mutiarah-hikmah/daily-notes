@@ -5,12 +5,14 @@
 
 body {
   margin: 0;
+  padding: 0;
   height: 100vh;
+  background-color: #ffeef5;
+  font-family: "CuteFont", "Comic Sans MS", cursive, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #ffeef5;
-  font-family: "CuteFont", sans-serif;
+  color: #333;
 }
 
 .container {
@@ -19,46 +21,81 @@ body {
   border-radius: 25px;
   box-shadow: 0 10px 25px rgba(255, 182, 193, 0.4);
   width: 100%;
-  max-width: 400px;
+  max-width: 600px;
   text-align: center;
 }
 
 h1 {
   color: #ff3e84;
   font-size: 2rem;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
-input {
+.subtitle {
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+input,
+textarea {
   width: 90%;
-  max-width: 200px;
   padding: 12px 18px;
-  margin: 10px auto;
+  margin: 10px 0;
   border: 2px solid #ffb6c1;
   border-radius: 15px;
   font-size: 1rem;
   font-family: inherit;
-  display: block;
   box-sizing: border-box;
+  background-color: #fef6f9;
 }
 
-button {
+textarea {
+  resize: none;
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+button,
+.save-btn,
+.logout-btn {
   width: 90%;
   max-width: 300px;
   padding: 12px;
-  background-color: #ff69b4;
-  color: white;
+  margin-top: 15px;
   border: none;
   border-radius: 15px;
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
-  margin: 20px auto 0;
-  display: block;
+  font-family: inherit;
 }
 
-button:hover {
+button,
+.save-btn {
+  background-color: #ff69b4;
+  color: white;
+}
+
+button:hover,
+.save-btn:hover {
   background-color: #ff3e84;
+}
+
+.logout-btn {
+  background-color: #d3d3d3;
+  color: #333;
+}
+
+.logout-btn:hover {
+  background-color: #bbb;
 }
 
 p {
@@ -73,74 +110,18 @@ a {
   font-weight: bold;
 }
 
-body {
-  margin: 0;
-  font-family: "Comic Sans MS", cursive, sans-serif;
-  background-color: #fff;
-  color: #333;
-}
-
-.container {
-  max-width: 600px;
-  margin: 40px auto;
-  padding: 20px;
-  text-align: center;
-}
-
-h1 {
-  font-size: 2em;
-  margin-bottom: 10px;
-}
-
-.subtitle {
-  font-size: 0.95rem;
-  margin-bottom: 20px;
-  color: #666;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-textarea {
-  width: 100%;
-  max-width: 100%;
-  padding: 12px;
-  font-size: 1rem;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  resize: none;
-  background-color: #f3f3f3;
-  box-sizing: border-box;
-}
-
-.save-btn {
-  margin-top: 10px;
-  background-color: #ffd6eb;
-  color: #333;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.save-btn:hover {
-  background-color: #ffc0e0;
-}
-
 .bottom-bar {
   display: flex;
   justify-content: space-between;
-  margin-top: 30px;
   align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  gap: 20px;
 }
 
 .prev-section {
   text-align: left;
-  width: 65%;
+  flex: 1;
 }
 
 .prev-label {
@@ -148,13 +129,14 @@ textarea {
   font-size: 1rem;
   margin-bottom: 6px;
   display: block;
+  color: #ff69b4;
 }
 
 .note-list {
   list-style: none;
   padding: 0;
   margin-top: 5px;
-  max-height: 120px;
+  max-height: 150px;
   overflow-y: auto;
   font-size: 0.9rem;
 }
@@ -166,18 +148,3 @@ textarea {
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(255, 105, 180, 0.1);
 }
-
-.logout-btn {
-  background-color: #d3d3d3;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.logout-btn:hover {
-  background-color: #bbb;
-}
-
-
