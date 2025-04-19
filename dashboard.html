@@ -1,8 +1,35 @@
-<body class="flower-bg">
-    <div class="container">
-      <h1 class="title">Hai, Muti! 🌸</h1>
-      <p class="subtitle">Selamat datang di Dashboard harianmu!</p>
-      <!-- Tambahkan catatan harian di sini nanti -->
-    </div>
-  </body>
-  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard | Daily Notes</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+  <header>
+    <h1>🌸 Daily Notes by Muti 🌸</h1>
+    <button id="logout-btn">Logout</button>
+  </header>
+
+  <main>
+    <section class="note-form">
+      <h2>Tulis Catatan Harianmu ✍️</h2>
+      <textarea id="note-input" placeholder="Tulis sesuatu yang lucu, seru, atau manis..."></textarea>
+      <button id="save-note">Simpan Catatan 💾</button>
+    </section>
+
+    <section class="note-list">
+      <h2>Catatan Sebelumnya 📚</h2>
+      <ul id="notes-container"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>🌷 Daily Notes by Muti 🌷</p>
+  </footer>
+
+  <script src="js/main.js" type="module"></script>
+</body>
+</html>
