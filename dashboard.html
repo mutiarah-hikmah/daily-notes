@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dashboard | Daily Notes</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="dashboard-body">
-  <div class="dashboard-box">
-    <h1 class="dashboard-title">🌸 Your Daily Notes 🌸</h1>
-    <p class="dashboard-subtitle">Tulis Catatan Harianmu sisini</p>
 
-    <form id="noteForm" class="note-form">
-      <textarea 
-        id="noteInput" 
-        placeholder="Tulis sesuatu yang lucu, seru, atau meaningful..."
+<body class="dashboard-body">
+  <div class="container">
+    <h1>🌸 Your Daily Notes 🌸</h1>
+    <p class="subtitle">Tulis Catatan Harianmu di sini</p>
+
+    <form id="noteForm">
+      <textarea
+        id="noteInput"
+        placeholder="Tulis sesuatu yang lucu, seru, atau penting..."
+        rows="6"
         required
       ></textarea>
-
-      <button type="submit" class="btn save-btn">💾 save</button>
+      <br />
+      <button type="submit" class="btn save-btn">💾 Save</button>
     </form>
 
     <div class="bottom-bar">
-        <div class="prev-section">
-          <span class="prev-label">Previous Note</span>
-          <ul id="noteList" class="note-list"></ul>
-        </div>
-        <button id="logoutBtn" class="btn logout-btn">Logout</button>
-      </div>      
+      <div class="prev-section">
+        <span class="prev-label">Previous Note</span>
+        <ul id="noteList" class="note-list"></ul>
+      </div>
+      <button id="logoutBtn" class="btn logout-btn">Logout</button>
+    </div>
+  </div>
 
   <script src="dashboard.js"></script>
 </body>
+
 </html>
