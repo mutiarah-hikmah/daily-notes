@@ -162,12 +162,40 @@ a {
   justify-content: space-between;
   width: 100%;
   margin-top: 30px;
-  align-items: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.prev-section {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
 }
 
 .prev-label {
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: bold;
   color: #333;
+  margin-bottom: 5px;
 }
+
+.note-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  max-height: 150px;
+  overflow-y: auto;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.note-list li {
+  background-color: #ffe4ec;
+  margin-bottom: 6px;
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(255, 105, 180, 0.1);
+  word-wrap: break-word;
+}
+
 
