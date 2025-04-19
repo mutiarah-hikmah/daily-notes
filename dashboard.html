@@ -144,16 +144,13 @@
       
       noteInput.value = savedNotes[currentNoteIndex];
     });
-    
-    // Logout button (just for demonstration)
-    // Logout button - redirect ke logout.html
-const logoutBtn = document.getElementById("logout-btn");
-logoutBtn.addEventListener("click", () => {
-  if (confirm("Are you sure you want to logout? 🌸")) {
-    window.location.href = "logout.html";
-  }
-});
 
+    const logoutBtn = document.getElementById("logout-btn");
+    logoutBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to logout? 🌸")) {
+        window.location.href = "logout.html";
+      }
+    });
   </script>
 </body>
 </html>

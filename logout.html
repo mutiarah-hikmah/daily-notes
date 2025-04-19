@@ -3,38 +3,54 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Logging out...</title>
-  <link rel="stylesheet" href="style.css">
+  <title>See You!</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
     body {
-      background-color: #ffe4ec;
+      background-color: #fff5f8;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      font-family: "Comic Sans MS", cursive, sans-serif;
+      margin: 0;
+      font-family: 'Pacifico', cursive;
       text-align: center;
-      flex-direction: column;
-      color: #333;
     }
-    .message {
-      font-size: 1.5rem;
-      margin-bottom: 20px;
+
+    .goodbye-message {
+      color: #ff69b4;
+      font-size: 2rem;
+    }
+
+    .subtext {
+      font-size: 1.2rem;
+      color: #666;
+      margin-top: 10px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .flower {
+      font-size: 2.5rem;
+      animation: float 2s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
     }
   </style>
 </head>
 <body>
-  <div class="message">🌸 Sampai jumpa! Kamu telah logout. 🌸</div>
-  <div>Menuju halaman awal...</div>
-
-  <script>
-    // Hapus session atau data localStorage (jika perlu)
-    localStorage.removeItem("note");
-
-    // Redirect ke halaman awal (misalnya index.html) setelah 2 detik
-    setTimeout(() => {
-      window.location.href = "index.html";
-    }, 2000);
-  </script>
+  <div>
+    <div class="flower">🌸</div>
+    <div class="goodbye-message">See you later, lovely soul!</div>
+    <div class="subtext">Thanks for writing today 💕<br/>Hope your day is as cute as you!</div>
+    <div class="flower">🌸</div>
+  </div>
 </body>
 </html>
