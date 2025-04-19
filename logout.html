@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - My Cute Diary</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Pacifico&display=swap');
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff5f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    
+    .container {
+      width: 90%;
+      max-width: 400px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      border: 2px solid #000;
+    }
+    
+    h1 {
+      font-family: 'Pacifico', cursive;
+      text-align: center;
+      color: #333;
+      margin-bottom: 5px;
+    }
+    
+    .subtitle {
+      text-align: center;
+      color: #666;
+      margin-top: 0;
+      margin-bottom: 30px;
+      font-size: 0.9rem;
+    }
+    
+    .login-form {
+      padding: 0 15px;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      box-sizing: border-box;
+      background-color: #f9f9f9;
+    }
+    
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-family: 'Pacifico', cursive;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      width: 100%;
+      text-align: center;
+      box-sizing: border-box;
+    }
+    
+    .button:hover {
+      background-color: #ffcce0;
+    }
+    
+    .register-link {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.9rem;
+    }
+    
+    .register-link a {
+      color: #ff80ab;
+      text-decoration: none;
+    }
+    
+    .register-link a:hover {
+      text-decoration: underline;
+    }
+    
+    .cherry-blossom {
+      color: #ff80ab;
+    }
+    
+    .error-message {
+      color: #ff6b6b;
+      text-align: center;
+      margin-bottom: 15px;
+      font-size: 0.9rem;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1><span class="cherry-blossom">🌸</span> My Cute Diary <span class="cherry-blossom">🌸</span></h1>
+    <p class="subtitle">Welcome back! Please login to continue</p>
+    
+    <div class="error-message" id="error-message">
+      Invalid username or password. Please try again.
+    </div>
+    
+    <form class="login-form" id="login-form">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+      </div>
+      
+      <button type="submit" class="button" id="login-button">Login</button>
+    </form>
+    
+    <div class="register-link">
+      Don't have an account? <a href="#">Register</a>
+    </div>
+  </div>
+
+  <script>
+    // Simple login script (demo only - not secure)
+    const loginForm = document.getElementById("login-form");
+    const errorMessage = document.getElementById("error-message");
+    
+    // Demo credentials (for testing only)
+    const DEMO_USERNAME = "user";
+    const DEMO_PASSWORD = "password";
+    
+    loginForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      
+      // Check credentials (demo only)
+      if (username === DEMO_USERNAME && password === DEMO_PASSWORD) {
+        // Success - redirect to diary page
+        const container = document.querySelector(".container");
+        container.innerHTML = `
+          <h1><span class="cherry-blossom">🌸</span> Login Successful <span class="cherry-blossom">🌸</span></h1>
+          <p class="subtitle">Redirecting to your diary...</p>
+        `;
+        
+        // Redirect to the diary page
+        setTimeout(() => {
+          window.location.href = "index.html"; // Assuming the diary is in index.html
+        }, 1500);
+      } else {
+        // Show error message
+        errorMessage.style.display = "block";
+        // Clear password field
+        document.getElementById("password").value = "";
+      }
+    });
+  </script>
+</body>
+</html>
