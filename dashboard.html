@@ -2,37 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dashboard | Daily Notes</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="dashboard-body">
-  <div class="dashboard-wrapper">
-    <div class="dashboard-container">
-      <h1 class="dashboard-title">🌸 Daily Notes by Muti 🌸</h1>
+  <div class="dashboard-box">
+    <h1 class="dashboard-title">🌸 Your Daily Notes 🌸</h1>
+    <p class="dashboard-subtitle">Tulis Catatan Harianmu sisini</p>
 
-      <form id="noteForm" class="note-form">
-        <h2 class="form-title">Tulis Catatan Harianmu ✍️</h2>
-        <textarea 
-          id="noteInput" 
-          placeholder="Tulis sesuatu yang lucu, seru, atau bermakna..."
-          required
-        ></textarea>
-        <div class="button-group">
-          <button type="submit" class="btn">💾 Simpan Catatan</button>
-          <button type="button" id="logoutBtn" class="btn logout">🚪 Logout</button>
-        </div>
-      </form>
+    <form id="noteForm" class="note-form">
+      <textarea 
+        id="noteInput" 
+        placeholder="Tulis sesuatu yang lucu, seru, atau meaningful..."
+        required
+      ></textarea>
 
-      <section class="notes-section">
-        <h2>📚 Catatan Sebelumnya</h2>
-        <ul id="notesList"></ul>
-      </section>
+      <button type="submit" class="btn save-btn">💾 save</button>
+    </form>
+
+    <div class="bottom-bar">
+      <span class="prev-label">Previous Note</span>
+      <button id="logoutBtn" class="btn logout-btn">Logout</button>
     </div>
-
-    <footer class="footer">
-      🌷 Daily Notes by Muti 🌷
-    </footer>
   </div>
 
   <script src="dashboard.js"></script>
