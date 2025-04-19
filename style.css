@@ -2,13 +2,13 @@
 
 body {
   margin: 0;
-  font-family: 'Gloria Hallelujah', cursive;
+  font-family: 'font2', cursive;
   background-color: #ffeef5;
   color: #4d194d;
 }
 
 .flower-bg {
-  background-image: url('../assets/images/flower-bg.png');
+  background-image: url('../assets/images/bg1');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
