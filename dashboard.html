@@ -96,13 +96,10 @@
     <h1><span class="cherry-blossom">🌸</span> Your Daily Notes <span class="cherry-blossom">🌸</span></h1>
     <p class="subtitle">Tulis Catatan Harianmu disini</p>
 
-    <!-- Note input area that matches the layout -->
     <textarea id="note-input" rows="4" placeholder="Write your thoughts here..."></textarea>
     
-    <!-- Save button styled like in the image -->
     <button type="button" class="button save-btn" id="save-button">save</button>
     
-    <!-- Bottom navigation with matched button styles -->
     <div class="bottom-bar">
       <button class="button" id="prev-note-btn">Previous Note</button>
       <button class="button" id="logout-btn">Logout</button>
@@ -110,38 +107,53 @@
   </div>
 
   <script>
-    // Simple script for saving notes temporarily
     const saveButton = document.getElementById("save-button");
     const noteInput = document.getElementById("note-input");
+
     let savedNotes = [];
     let currentNoteIndex = -1;
-    
-    // Save button functionality
+
     saveButton.addEventListener("click", () => {
-      const text = noteInput.value.trim();
-      if (text) {
-        savedNotes.push(text);
-        noteInput.value = "";
-        alert("Note saved successfully! 💕");
-        currentNoteIndex = savedNotes.length - 1;
-      } else {
+      const note = noteInput.value.trim();
+
+      if (!note) {
         alert("Please write something first! 🌸");
+        return;
       }
+
+      // Simpan catatan ke Google Spreadsheet
+      fetch("https://script.google.com/macros/s/AKfycbzQuyYnjWjCfZClyYzYVC20H6cJmBUp_0Ae0HTCQB-AuAlVkY03ADIrFQX_sWxGrMhm/exec", {
+        method: "POST",
+        body: new URLSearchParams({ note: note }),
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        }
+      })
+      .then(response => response.text())
+      .then(result => {
+        alert("Note saved to spreadsheet! 💕");
+        savedNotes.push(note);
+        currentNoteIndex = savedNotes.length - 1;
+        noteInput.value = "";
+      })
+      .catch(error => {
+        console.error("Error:", error);
+        alert("Failed to save note. 😢");
+      });
     });
-    
-    // Previous note functionality
+
     const prevNoteBtn = document.getElementById("prev-note-btn");
     prevNoteBtn.addEventListener("click", () => {
       if (savedNotes.length === 0) {
         alert("No previous notes found! 🌸");
         return;
       }
-      
+
       currentNoteIndex--;
       if (currentNoteIndex < 0) {
         currentNoteIndex = savedNotes.length - 1;
       }
-      
+
       noteInput.value = savedNotes[currentNoteIndex];
     });
 
